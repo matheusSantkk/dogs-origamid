@@ -34,7 +34,7 @@ export default [
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "no-unsafe-finally": "off",
-      "no-unused-vars": "off",
+      "no-unused-vars": "warn",
       "react/jsx-key": "off",
     },
     settings: {
