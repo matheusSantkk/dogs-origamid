@@ -18,9 +18,10 @@ export const UserStorage = ({ children }) => {
       setLoading(false);
       setLogin(false);
       window.localStorage.removeItem('token');
-      navigate('/login');
+
     },
-    [navigate],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
   );
 
   async function getUser(token) {
@@ -62,6 +63,7 @@ export const UserStorage = ({ children }) => {
           if (!response.ok) throw new Error('Token inválido');
           await getUser(token);
         } catch (err) {
+          console.log(err)//somente para para de dar aviso (retirar depois)
           userLogout();
         } finally {
           setLoading(false);
